@@ -62,3 +62,16 @@ h3 {
   transition: 0.3s;
   border: 1px solid var(--bg-color);
 }
+
+.game-over-bg {
+  background-color: black;
+}
+
+.game-over {
+  color: red;
+  font-weight: 900;
+}
+
+.desisto {
+  margin-top: 40px;
+}

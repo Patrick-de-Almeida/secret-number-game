@@ -2,8 +2,18 @@ function verificaValor(chute) {
   const numero = +chute;
 
   if (chuteForInvalido()(numero)) {
-    elementoChute.innerHTML += "<div>Valor inválido</div>";
-    return;
+    if (chute.toUpperCase() === "DESISTO") {
+      document.body.innerHTML = `
+      <h2 class='game-over'>GAME OVER!</h2>
+      <h3>O número secreto era ${numeroSecreto}.</h3>
+
+      <button id='jogar-novamente' class='btn-jogar'>Jogar Novamente</button>
+      `;
+      document.body.classList.add("game-over-bg");
+    } else {
+      elementoChute.innerHTML += "<div>Valor inválido</div>";
+      return;
+    }
   }
 
   if (numeroForMaiorOuMenorQueOValorPermitido(numero)) {
